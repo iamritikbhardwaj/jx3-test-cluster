@@ -9,8 +9,8 @@ spec:
       containers:
       - name: boot
         image: ghcr.io/jenkins-x/jx-boot:latest
-        # CHANGE THIS LINE:
-        command: ["jx", "admin", "operator", "local"] 
+        # CHANGE THIS LINE to the actual boot command:
+        command: ["jx-gitops", "apply", "--remote", "--no-verify-checksum"]
         env:
         - name: JX_LOG_LEVEL
           value: "info"
