@@ -9,7 +9,8 @@ spec:
       containers:
       - name: boot
         image: ghcr.io/jenkins-x/jx-boot:latest
-        command: ["jx", "admin", "log"]
+        # CHANGE THIS LINE:
+        command: ["jx", "admin", "operator", "local"] 
         env:
         - name: JX_LOG_LEVEL
           value: "info"
