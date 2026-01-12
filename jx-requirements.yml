@@ -2,10 +2,8 @@ apiVersion: core.jenkins-x.io/v4beta1
 kind: Requirements
 spec:
   cluster:
-    chartRepository: http://bucketrepo.jx.svc.cluster.local/bucketrepo/charts
     clusterName: kind
     provider: kind
-  gitops: true
   environments:
   - key: dev
   - key: staging
@@ -15,6 +13,7 @@ spec:
     externalDNS: false
     tls:
       enabled: false
+  # Version stream MUST be outside of 'cluster' but inside 'spec'
   versionStream:
     url: https://github.com/jenkins-x/jenkins-x-versions.git
     ref: master
