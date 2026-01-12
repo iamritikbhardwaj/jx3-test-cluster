@@ -1,0 +1,16 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: jx-boot
+spec:
+  template:
+    spec:
+      serviceAccountName: jx-git-operator
+      containers:
+      - name: boot
+        image: ghcr.io/jenkins-x/jx-boot:latest
+        command: ["jx", "admin", "log"]
+        env:
+        - name: JX_LOG_LEVEL
+          value: "info"
+      restartPolicy: Never
