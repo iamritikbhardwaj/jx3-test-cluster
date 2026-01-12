@@ -1,0 +1,20 @@
+apiVersion: core.jenkins-x.io/v4beta1
+kind: Requirements
+spec:
+  cluster:
+    chartRepository: http://bucketrepo.jx.svc.cluster.local/bucketrepo/charts
+    clusterName: kind
+    provider: kind
+  gitops: true
+  environments:
+  - key: dev
+  - key: staging
+  - key: production
+  ingress:
+    domain: ""
+    externalDNS: false
+    tls:
+      enabled: false
+  versionStream:
+    url: https://github.com/jenkins-x/jenkins-x-versions.git
+    ref: master

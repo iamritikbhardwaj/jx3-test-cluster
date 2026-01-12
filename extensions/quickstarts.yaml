@@ -1,0 +1,12 @@
+apiVersion: project.jenkins-x.io/v1alpha1
+kind: Quickstarts
+spec:
+  quickstarts:
+  - name: my-react-quickstart
+    language: javascript
+    framework: react
+    downloadZipURL: https://api.github.com/repos/iamritikbhardwaj/react-quickstart/zipball/master
+  imports:
+  - file: versionStream/quickstarts.yaml
+    includes:
+    - ".*"
